@@ -43,9 +43,9 @@ class SecureCheckout
       Capybara.fill_in "Telephone", :with => @config["billing_address"]["telephone"]
     end
     
-    Capybara.select "New Address", :from => "shipping_address_id" if Capybara.has_css? "select#billing_customer_address" && ( @config["shipping_address"]["address"] == "" || @config["shipping_address"]["address"] == " " || @config["shipping_address"]["address"] == nil)
-
-    unless @config["shipping_address"]["address"] == "" || @config["shipping_address"]["address"] == " " || @config["shipping_address"]["address"] == nil
+    if @config["use_billing_as_shipping"] == false
+      Capybara.uncheck "shipping:same_as_billing"
+      Capybara.select "New Address", :from => "shipping_address_id" if Capybara.has_css? "select#billing_customer_address"
       Capybara.uncheck "shipping:same_as_billing" 
       Capybara.fill_in "shipping:firstname", :with => @config["first_name"]
       Capybara.fill_in "shipping:middlename", :with => @config["middle_name"]
@@ -54,11 +54,13 @@ class SecureCheckout
       Capybara.select @config["shipping_address"]["country"], :from => "shipping:country_id" unless @config["shipping_address"]["country"] == "United States"
       Capybara.fill_in "shipping:street1", :with => @config["shipping_address"]["address"]
       Capybara.fill_in "shipping:street2", :with => @config["shipping_address"]["address2"]
-      Capybara.fill_in "City", :with => @config["shipping_address"]["city"]
+      Capybara.fill_in "shipping:city", :with => @config["shipping_address"]["city"]
       sleep 1
       Capybara.select @config["shipping_address"]["state-province"], :from => "shipping:region_id"
       Capybara.fill_in "shipping:postcode", :with => @config["shipping_address"]["zipcode"]
       Capybara.fill_in "shipping[telephone]", :with => @config["shipping_address"]["telephone"]
+    else
+      Capybara.check "shipping:same_as_billing"
     end
   end
 
