@@ -27,26 +27,39 @@ class SecureCheckout
     Capybara.page.has_content?('Log Out')
   end
 
-  def self.register
+  def register
   end
 
-  def self.select_payment_method
-
-  end
-
-  def self.select_shipping
+  def fill_information
+    Capybara.fill_in "First Name", :with => @config["first_name"]
+    Capybara.fill_in "Middle Name", :with => @config["middle_name"]
+    Capybara.fill_in "Last Name", :with => @config["last_name"]
     
   end
 
-  def self.enter_promo_code
+  def add_products_to_cart
+    for product in @config["products"]
+      puts product["name"]
+      puts product["qty"]
+      unless product["qty"] == "0" || product["qty"] == "" || product["qty"] == nil
+        case product["name"]
+        when "5GHS"
+          Capybara.visit 'https://products.butterflylabs.com/homepage/5-gh-s-bitcoin-miner.html'
+        when "50GHS"
+          Capybara.visit 'https://products.butterflylabs.com/homepage/50-gh-s-bitcoin-miner.html'
+        when "300GHS"
+          Capybara.visit 'https://products.butterflylabs.com/homepage-new-products/300-gh-bitcoin-mining-card.html'
+        when "600GHS"
+          Capybara.visit 'https://products.butterflylabs.com/homepage-new-products/600-gh-bitcoin-mining-card.html'
+        else
+          raise "Could not find product!"
+        end
+        Capybara.fill_in "qty", :with => product["qty"]
+        Capybara.click_button "Add to Cart"
+      end
+    end
+        
 
-  end
-
-  def self.place_order
-
-  end
-
-  def order_products
   end
 
 
