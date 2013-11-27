@@ -14,6 +14,18 @@ When(/^I proceed to checkout$/) do
 end
 
 When(/^I fill in my information$/) do
+  @checkout_page.fill_information
+end
+
+When(/^I select my shipping method$/) do
+  @checkout_page.select_shipping_method
+end
+
+When(/^I select my payment mehtod$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+When(/^I enter the promo code$/) do
   pending # express the regexp above with the code you wish you had
 end
 
