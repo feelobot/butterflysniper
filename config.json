@@ -7,13 +7,13 @@
   "email" : "",
   "billing_address" : {
     "company" : "",
-    "country" : "United States",
-    "address" : "5900 3rd St.",
-    "address2" : "Unit 2220",
-    "city" : "San Francisco",
-    "state-province" : "California",
-    "zipcode" : "94124",
-    "telephone" : "4156576099"
+    "country" : "",
+    "address" : "",
+    "address2" : "",
+    "city" : "",
+    "state-province" : "",
+    "zipcode" : "",
+    "telephone" : ""
   },
   "use_billing_as_shipping" : true,
   "shipping_address" : {
