@@ -1,22 +1,40 @@
 {
-  "username" : "your_username",
-  "password" : "your_password",
-  "first_name" : " ",
-  "last_name" : " ",
-  "email" : " ",
-  "company" : " ",
-  "country" : " ",
-  "address" : " ",
-  "address2" : " ",
-  "city" : " ",
-  "state-province" : " ",
-  "zipcode" : " ",
-  "telephone" : " ",
-  "password" : " ",
-  "products" : [
-    {"product" : "5GHS", "qty" : "0" },
-    {"product" : "50GHS", "qty" : "0" },
-    {"product" : "300GHS", "qty" : "0" },
-    {"product" : "600GHS", "qty" : "0" }
-  ]
+  "username" : "",
+  "password" : "",
+  "first_name" : "",
+  "middle_name" : "",
+  "last_name" : "",
+  "email" : "",
+  "billing_address" : {
+    "company" : "",
+    "country" : "United States",
+    "address" : "5900 3rd St.",
+    "address2" : "Unit 2220",
+    "city" : "San Francisco",
+    "state-province" : "California",
+    "zipcode" : "94124",
+    "telephone" : "4156576099"
+  },
+  "use_billing_as_shipping" : true,
+  "shipping_address" : {
+    "first_name" : "",
+    "middle_name" : "",
+    "last_name" : "",
+    "company" : "",
+    "country" : "",
+    "address" : "",
+    "address2" : "",
+    "city" : "",
+    "state-province" : "",
+    "zipcode" : "",
+    "telephone" : ""
+  },
+  "product" : { "name" : "5GHS", "qty" : "0" },
+  "shipping_method" : "standard",
+  "payment_method" : "btc",
+  "ach" : { 
+    "account_type" : "",
+    "account_number" : "",
+    "routing_number" : "" 
+  }
 }
