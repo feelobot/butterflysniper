@@ -1,0 +1,22 @@
+{
+  "username" : "your_username",
+  "password" : "your_password",
+  "first_name" : " ",
+  "last_name" : " ",
+  "email" : " ",
+  "company" : " ",
+  "country" : " ",
+  "address" : " ",
+  "address2" : " ",
+  "city" : " ",
+  "state-province" : " ",
+  "zipcode" : " ",
+  "telephone" : " ",
+  "password" : " ",
+  "products" : [
+    {"product" : "5GHS", "qty" : "0" },
+    {"product" : "50GHS", "qty" : "0" },
+    {"product" : "300GHS", "qty" : "0" },
+    {"product" : "600GHS", "qty" : "0" }
+  ]
+}
