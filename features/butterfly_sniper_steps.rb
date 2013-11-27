@@ -22,17 +22,13 @@ When(/^I select my shipping method$/) do
 end
 
 When(/^I select my payment mehtod$/) do
-  pending # express the regexp above with the code you wish you had
+  @checkout_page.select_payment_method
 end
 
 When(/^I enter the promo code$/) do
-  pending # express the regexp above with the code you wish you had
+  @checkout_page.add_promo_code
 end
 
-When(/^I place the order$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-Then(/^I should be able to mine bitcoins in (\d+) months$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+When(/^I can place the order$/) do
+  @checkout_page.place_order
 end

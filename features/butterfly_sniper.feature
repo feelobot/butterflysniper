@@ -12,5 +12,4 @@ Scenario: Buy Bitcoin Miner
     And I select my shipping method
     And I select my payment mehtod
     And I enter the promo code
-    And I place the order
-  Then I should be able to mine bitcoins in 3 months
+  Then I can place the order
